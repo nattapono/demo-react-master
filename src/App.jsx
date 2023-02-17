@@ -20,7 +20,7 @@ function App() {
   }
   let activeClassName = "nav-active"
   return (
-    <HashRouter basename='/demo-react-master'>
+    <HashRouter basename={'/demo-react-master'}>
       <header>
         <h1>Hi</h1>
       </header>
