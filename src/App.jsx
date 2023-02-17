@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { BrowserRouter , NavLink, Routes, Route, Navigate} from 'react-router-dom'
+import { HashRouter , NavLink, Routes, Route, Na, HashRoutervigate} from 'react-router-dom'
 
 //Pages
 import Home from './views/Home'
@@ -20,7 +20,7 @@ function App() {
   }
   let activeClassName = "nav-active"
   return (
-    <BrowserRouter>
+    <HashRouter>
       <header>
         <h1>Hi</h1>
       </header>
@@ -37,7 +37,7 @@ function App() {
         <Route path="/Dashboard" element={loggedIn ? <Dashboard logout={handleLogOut} /> : <Navigate to="/" state={"Text from Dashboard"} />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
