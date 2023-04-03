@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import './assets/css/App.css'
+import './assets/css/tiny-slider.css'
+import './assets/css/bootstrap-icons.css'
 import { BrowserRouter , NavLink, Routes, Route, Navigate} from 'react-router-dom'
 
 //Pages
 import Home from './views/Home'
 import About from './views/About'
+import Header from './components/template/Header'
 import Contact from './views/Contact'
 import Dashboard from './views/Dashboard'
 import Error from './views/Error'
@@ -21,15 +24,13 @@ function App() {
   let activeClassName = "nav-active"
   return (
     <BrowserRouter>
-      <header>
-        <h1>Hi</h1>
-      </header>
-      <nav>
+      <Header />
+      {/* <nav>
         <NavLink end to="/" className={({isActive})=>isActive ? activeClassName : undefined}>Home</NavLink> 
         <NavLink to="/About"  className={({isActive})=>isActive ? activeClassName : undefined}>About</NavLink> 
         <NavLink to="/Contact"  className={({isActive})=>isActive ? activeClassName : undefined}>Contact</NavLink> 
         <NavLink to="/Dashboard">Dashboard</NavLink> 
-      </nav>
+      </nav> */}
       <Routes>
         <Route path="/" element={loggedIn ? <Navigate to="/Dashboard"/> : <Home login={handleLogIn} />} />
         <Route path="/About" element={<About />} />
